@@ -16,12 +16,11 @@
 <h1 class="text-center">零食品牌数据查询</h1>
 <hr/>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-8">
         <form method="post" action="/brands/view">
             {{ csrf_field() }}
-        <div class="form-group col-md-5">
-            <label>分类</label>
-            <select class="form-control select2" name="type" style="width: 100%;">
+        <div class="form-group col-md-4">
+            <select class="form-control form-group select2 col-md-8" name="type">
                 <option selected="selected" value="{{$type}}">{{$type}}</option>
                 <option value="所有品牌">所有品牌</option>
                 <option value="零食店品牌">零食店品牌</option>
@@ -32,15 +31,15 @@
             </select>
         </div>
         <div class="col-md-4">
-            <label>统计</label>
-            <div class="">
+            <label class="form-group col-md-3 col-xs-12" style="padding-top: 5px;">统计</label>
+            <div class="col-md-8">
                 <input type="number" id="number" name="nums"   @if(!empty($nums)) value="{{$nums}}" @else value="1" @endif" class="form-control ">
             </div>
         </div>
 
-        <div class="col-md-3">
-            <label class="text-center">搜索</label>
-            <button id="send" type="submit" class="btn btn-success">Submit</button>
+        <div class="col-md-4">
+            <label class="col-md-4 col-xs-12" style="padding-top:5px;">搜索</label>
+            <button c id="send" type="submit" class="col-md-8 btn btn-success">搜索</button>
         </div>
         </form>
     </div>
