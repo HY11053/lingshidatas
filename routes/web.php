@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 Route::get('brands','BrandController@CreateDatas');
 Route::get('brands/view','BrandController@GetViews');
+Route::get('qingchu','BrandController@qingchu');
 Route::post('brands/view','BrandController@GetDatas');

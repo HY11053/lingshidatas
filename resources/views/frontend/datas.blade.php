@@ -44,6 +44,7 @@
         </form>
     </div>
 </div>
+<div class="col-md-12"><em>共有：{{$datas->total()}}个品牌</em></div>
 <div class="col-md-12">
     <div class="bs-example" data-example-id="hoverable-table">
         <table class="table table-hover">

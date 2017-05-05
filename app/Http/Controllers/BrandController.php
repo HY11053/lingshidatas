@@ -52,4 +52,30 @@ class BrandController extends Controller
 
         return view('frontend.datas',compact('datas','nums','type'));
     }
+    function qingchu()
+    {
+        for ($i=1;$i<10659;$i++)
+        {
+            //->update(['brands'=>BrandDatas::where('id',$i)->value('brands')])
+
+            //dd(BrandDatas::where('id',$i)->value('brands'));
+            //BrandDatas::where('brands','like','%'.BrandDatas::where('id',$i)->value('brands').'%')->update(['brands'=>BrandDatas::where('id',$i)->value('brands')]);
+            $nums=BrandDatas::where('brands',BrandDatas::where('id',$i)->value('brands'))->get();
+            $num=0;
+            $del=[];
+            for ($j=0;$j<count($nums);$j++)
+            {
+                $num+=$nums[$j]->nums;
+                if($j!=0){
+                    $del[]=$nums[$j]->id;
+                }
+
+            }
+
+            BrandDatas::where('id',$i)->update(['nums'=>$num]);
+            BrandDatas::whereIn('id',$del)->delete();
+
+
+        }
+    }
 }
