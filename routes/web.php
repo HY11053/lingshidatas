@@ -18,3 +18,7 @@ Route::get('brands','BrandController@CreateDatas');
 Route::get('brands/view','BrandController@GetViews');
 Route::get('qingchu','BrandController@qingchu');
 Route::post('brands/view','BrandController@GetDatas');
+Route::get('createarticle','CreateArticle@Create');
+Route::post('createarticle','CreateArticle@CreateDatas');
+Route::get('importdatas','CreateArticle@Import');
+Route::post('importdatas','CreateArticle@ImportDatas');

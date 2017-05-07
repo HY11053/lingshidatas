@@ -32,28 +32,28 @@
         <div class="form-group ">
 
             <label class="checkbox-inline">
-                <input type="checkbox" id="jmlc" checked name="jmlc" value="jmlc"> 加盟流程
+                <input type="checkbox" id="jmlc" @if(isset($jmlc)) checked @endif name="jmlc" value="jmlc"> 加盟流程
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" id="jmtj" checked  name="jmtj" value="jmtj"> 加盟条件
+                <input type="checkbox" id="jmtj" @if(isset($jmtj)) checked @endif name="jmtj" value="jmtj"> 加盟条件
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" id="jmzc" checked name="jmzc" value="jmzc"> 加盟支持
+                <input type="checkbox" id="jmzc" @if(isset($jmzc)) checked @endif name="jmzc" value="jmzc"> 加盟支持
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" id="xzjq" checked name="xzjq" value="xzjq"> 选址技巧
+                <input type="checkbox" id="xzjq" @if(isset($xzjq)) checked @endif name="xzjq" value="xzjq"> 选址技巧
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" id="jyqj" checked name="jyjq" value="jyjq"> 经营技巧
+                <input type="checkbox" id="jyjq" @if(isset($jyjq)) checked @endif name="jyjq" value="jyjq"> 经营技巧
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" id="tzfx" checked name="tzfx" value="tzfx"> 投资分析
+                <input type="checkbox" id="tzfx" @if(isset($tzfx)) checked @endif name="tzfx" value="tzfx"> 投资分析
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" id="lrfx" checked name="lrfx" value="lrfx"> 利润分析
+                <input type="checkbox" id="lrfx" @if(isset($lrfx)) checked @endif name="lrfx" value="lrfx"> 利润分析
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" id="comment" checked name="comment" value="comment"> 品牌评论
+                <input type="checkbox" id="comment" @if(isset($comment)) checked @endif name="comment" value="comment"> 品牌评论
             </label>
         </div>
         <hr/>
@@ -76,7 +76,7 @@
 <hr>
 <div class="col-md-6 col-md-offset-3">
     <div class="article">
-        @if(isset($brand) && !empty($brand))<h2>{{$brand}}加盟流程</h2> @endif
+        @if(isset($brand) && !empty($brand) && isset($jmlc))<h2>{{$brand}}加盟流程</h2> @endif
        @if(isset($jmlcdatas) && !empty($jmlcdatas))
 
            @foreach($jmlcdatas as $index=>$jmlcdata)
@@ -85,7 +85,7 @@
            @endif
     </div>
     <div class="article">
-        @if(isset($brand) && !empty($brand))<h2>{{$brand}}加盟条件</h2> @endif
+        @if(isset($brand) && !empty($brand) && isset($jmtj))<h2>{{$brand}}加盟条件</h2> @endif
         @if(isset($jmtjdatas) && !empty($jmtjdatas))
 
             @foreach($jmtjdatas as $index=>$jmtjdata)
@@ -94,7 +94,7 @@
         @endif
     </div>
     <div class="article">
-        @if(isset($brand) && !empty($brand))<h2>{{$brand}}加盟支持</h2> @endif
+        @if(isset($brand) && !empty($brand) && isset($jmzc))<h2>{{$brand}}加盟支持</h2> @endif
         @if(isset($jmzcdatas) && !empty($jmzcdatas))
 
             @foreach($jmzcdatas as $index=>$jmzcdata)
@@ -103,7 +103,7 @@
         @endif
     </div>
     <div class="article">
-        @if(isset($brand) && !empty($brand))<h2>{{$brand}}选址技巧</h2> @endif
+        @if(isset($brand) && !empty($brand) && isset($xzjq))<h2>{{$brand}}选址技巧</h2> @endif
         @if(isset($xzjqdatas) && !empty($xzjqdatas))
 
             @foreach($xzjqdatas as $index=>$xzjqdata)
@@ -112,7 +112,7 @@
         @endif
     </div>
     <div class="article">
-        @if(isset($brand) && !empty($brand))<h2>{{$brand}}经营技巧</h2> @endif
+        @if(isset($brand) && !empty($brand) && isset($jyjq))<h2>{{$brand}}经营技巧</h2> @endif
         @if(isset($jyjqdatas) && !empty($jyjqdatas))
 
             @foreach($jyjqdatas as $index=>$jyjqdata)
@@ -121,7 +121,7 @@
         @endif
     </div>
     <div class="article">
-        @if(isset($brand) && !empty($brand))<h2>{{$brand}}投资分析</h2> @endif
+        @if(isset($brand) && !empty($brand) && isset($tzfx))<h2>{{$brand}}投资分析</h2> @endif
         @if(isset($tzfxdatas) && !empty($tzfxdatas))
 
             @foreach($tzfxdatas as $index=>$tzfxdata)
@@ -130,7 +130,7 @@
         @endif
     </div>
     <div class="article">
-        @if(isset($brand) && !empty($brand))<h2>{{$brand}}利润分析</h2> @endif
+        @if(isset($brand) && !empty($brand) && isset($lrfx))<h2>{{$brand}}利润分析</h2> @endif
         @if(isset($lrfxdatas) && !empty($lrfxdatas))
 
             @foreach($lrfxdatas as $index=>$lrfxdata)
@@ -139,11 +139,11 @@
         @endif
     </div>
     <div class="article">
-        @if(isset($brand) && !empty($brand))<h2>{{$brand}}品牌评论</h2> @endif
+        @if(isset($brand) && !empty($brand) && isset($comment))<h2>{{$brand}}品牌评论</h2> @endif
         @if(isset($comments) && !empty($comments))
 
             @foreach($comments as $index=>$comment)
-                <p>{{$index+1}}、{{$jmlcdata->comment}}</p>
+                <p>{{$index+1}}、{{$comment->comment}}</p>
             @endforeach
         @endif
     </div>

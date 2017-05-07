@@ -16,6 +16,27 @@
     "jquery": "^3.1.1",
     "laravel-mix": "0.*",
     "lodash": "^4.17.4",
-    "vue": "^2.1.10"
-  }
+    "vue": "^2.1.10",
+    "webpack": "^2.5.1"
+  },
+  "name": "lingshi",
+  "description": "<p align=\"center\"><img src=\"https://laravel.com/assets/img/components/logo-laravel.svg\"></p>",
+  "version": "1.0.0",
+  "main": "webpack.mix.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://HY11053@github.com/HY11053/lingshidatas.git"
+  },
+  "keywords": [
+    "lingshi"
+  ],
+  "author": "liangliliang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HY11053/lingshidatas/issues"
+  },
+  "homepage": "https://github.com/HY11053/lingshidatas#readme"
 }
